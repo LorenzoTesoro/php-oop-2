@@ -2,12 +2,10 @@
 
 class ProductType
 {
-    public $name;
     public $type;
 
-    public function __construct($name, $type)
+    public function __construct($type)
     {
-        $this->name = $name;
         $this->type = $type;
     }
 }
