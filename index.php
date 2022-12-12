@@ -1,18 +1,30 @@
 <?php
+/* 
+BONUS (Opzionale):
+1. Il cliente potrà sia comprare i prodotti come ospite, senza doversi registrarsi nello store, oppure può iscriversi e creare un account per ricevere cosi il 20% di sconto.
+2. Il cliente effettua il pagamento dei prodotti nel carrello con la carta di credito, che non deve essere scaduta.
 
-/* Immaginare quali sono le classi necessarie per creare uno shop online con le seguenti caratteristiche:
-    1. L'e-commerce vende prodotti per animali. - create product class
-    2. I prodotti sono categorizzati, le categorie sono Cani o Gatti. - create category class
-    3. I prodotti saranno oltre al cibo, anche giochi, cucce, etc. - create productype class
-Print: Stampiamo delle card contenenti i dettagli dei prodotti, come immagine, titolo, prezzo, icona della categoria ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia). - db for products
-    4. Card (img, title, price, category_icon, type);
-
+   1: 
+    - creo una classe per lo User - x i clienti in generale
+    - extends class for registered user - x il cliente registrato 
+    - nella classe registered_user creo una funzione che setta lo sconto del 20 % - function set_sconto / get_sconto
+    -  
 */
 
+require __DIR__ . '/Models/User.php';
+require __DIR__ . '/Models/RegisteredUser.php';
 require __DIR__ . '/Models/Product.php';
 require __DIR__ . '/Models/ProductType.php';
 require __DIR__ . '/Models/Category.php';
 require __DIR__ . '/db.php';
+
+
+$user_1 = new Registered_user('lorenzo', 26, 'not registered user');
+var_dump($user_1);
+
+$user_1->set_discount('not registered');
+
+var_dump($user_1);
 
 ?>
 
