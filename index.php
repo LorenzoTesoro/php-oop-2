@@ -17,3 +17,10 @@ Print: Stampiamo delle card contenenti i dettagli dei prodotti, come immagine, t
 */
 
 require __DIR__ . '/Models/Product.php';
+require __DIR__ . '/Models/ProductType.php';
+require __DIR__ . '/Models/Category.php';
+
+
+$product_1 = new Product('img', 'nome prodotto', '10 €', new Category('cane', 'dog_icon'), new ProductType('cuccia 1', 'cuccia per cani'));
+
+var_dump($product_1);
