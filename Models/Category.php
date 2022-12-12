@@ -10,9 +10,4 @@ class Category
         $this->name = $name;
         $this->icon = $icon;
     }
-
-    public function get_icon()
-    {
-        return $this->icon;
-    }
 }
