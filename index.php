@@ -21,12 +21,12 @@ require __DIR__ . '/Models/ProductType.php';
 require __DIR__ . '/Models/Category.php';
 require __DIR__ . '/Models/DogProduct.php';
 require __DIR__ . '/Models/CatProduct.php';
+require __DIR__ . '/db.php';
 
 
-$dog_product_1 = new DogProduct('...', 'osso1', '3 €', new Category('dog', 'dog_icon'), new ProductType('cibo'));
+/* $dog_product_1 = new DogProduct('...', 'osso1', '3 €', new Category('dog', 'dog_icon'), new ProductType('cibo'));
 
-var_dump($dog_product_1);
-
+var_dump($dog_product_1); */
 
 ?>
 
@@ -46,21 +46,24 @@ var_dump($dog_product_1);
 
 <body>
 
-    <h1>Products</h1>
+    <h1 class="text-center">Products</h1>
 
     <div class="container">
         <div class="row">
-            <div class="col">
+            <?php foreach ($products as $product) : ?>
+                <div class="col">
+                    <div class="card">
+                        <img class="card-img-top" src="<?php echo $product->image ?>" alt="<?php echo $product->image ?>">
+                        <div class="card-body">
+                            <h4 class="card-title">Name: <?php echo $product->name ?></h4>
+                            <p class="card-text">Price: <?php echo $product->price ?></p>
 
-            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
         </div>
     </div>
-
-
-
-
-
-
 
     <!-- Bootstrap libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
